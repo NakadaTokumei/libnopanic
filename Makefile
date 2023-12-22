@@ -10,7 +10,7 @@ RUSTC_FLAGS=--target=$(RUSTC_TARGET)         \
 			-Zcrate-attr=no_std
 
 libnopanic.rlib: lib.rs
-	$(RUSTC) $(RUSTC_FLAGS) --emit=link=$@ $<
+	$(RUSTC) $(RUSTC_FLAGS) --emit=link=$@ --emit=obj=nopanic.o $<
 
 clean:
 	rm *.rlib
